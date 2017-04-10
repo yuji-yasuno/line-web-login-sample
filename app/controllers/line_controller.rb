@@ -12,6 +12,8 @@ class LineController < ApplicationController
     response = RestClient.post 'https://api.line.me/v2/oauth/accessToken', request_body, {content_type: 'application/x-www-form-urlencoded'}
 
     @response_json = response.body
+    logger.debug("@response_json = #{@response_json}")
+
     access_token = @response_json['access_token']
     token_type = @response_json['token_type']
     refresh_token = @response_json['refresh_token']
