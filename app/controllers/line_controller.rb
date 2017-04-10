@@ -17,10 +17,9 @@ class LineController < ApplicationController
     access_token = @response_json['access_token']
     token_type = @response_json['token_type']
     refresh_token = @response_json['refresh_token']
-    logger.debug("access_token = #{access_token}")
-    logger.debug("token_type = #{token_type}")
-    logger.debug("refresh_token = #{refresh_token}")
-
+    logger.debug(access_token)
+    logger.debug(token_type)
+    logger.debug(refresh_token)
 
   end
 
