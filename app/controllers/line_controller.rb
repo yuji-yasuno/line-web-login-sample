@@ -18,7 +18,6 @@ class LineController < ApplicationController
     token_type = @response_json['token_type']
     refresh_token = @response_json['refresh_token']
 
-    logger.debug("profile_request_headers #{profile_request_headers.to_s}")
     profile_response = RestClient.get 'https://api.line.me/v2/profile', {'Authorization' => "#{token_type} #{access_token}"}
 
     @profile_response_json = JSON.parse(profile_response.body)
