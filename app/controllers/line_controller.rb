@@ -25,7 +25,7 @@ class LineController < ApplicationController
         'Authorization' => "#{@token_type} #{@access_token}"
     }
     logger.debug("profile_request_headers #{profile_request_headers.to_s}")
-    profile_response = RestClient.get 'https://api.line.me/v2/profile', profile_request_headers}
+    profile_response = RestClient.get 'https://api.line.me/v2/profile', profile_request_headers
 
     @profile_response_json = JSON.parse(profile_response.body)
     @userId = @profile_response_json['userId']
